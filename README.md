@@ -4,7 +4,7 @@ This is a small python script that uses rule 30 and PIL to create a 1024 x 1024 
 
 ## Running
 
-It will create the image under pfp.png in the repos directory.
+It will create the image under pfp.png in the repo's directory.
 ```
 python script.py
 ```

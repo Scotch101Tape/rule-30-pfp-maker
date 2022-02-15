@@ -1,5 +1,4 @@
 import random
-import math
 from PIL import Image
 
 PFP_SIZE = 1024
@@ -34,12 +33,14 @@ pfp = Image.new('RGB', (PFP_SIZE, PFP_SIZE))
 for i in range(CELLS_SIZE):
   if bool(random.getrandbits(1)):
     cells[0][i] = True
+  else:
     write_square(pfp, i, 0)
 
 for x in range(1, CELLS_SIZE):
   for y in range(CELLS_SIZE):
     if on_or_off(cells[x - 1], y):
-      write_square(pfp, y, x)
       cells[x][y] = True
+    else:
+      write_square(pfp, y, x)
 
 pfp.save("pfp.png")

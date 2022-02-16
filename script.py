@@ -1,8 +1,10 @@
 import random
 from PIL import Image
+import os
+import sys
 
-PFP_SIZE = 1024
-SQUARE_SIZE = 64
+PFP_SIZE = int(sys.argv[1])
+SQUARE_SIZE = int(sys.argv[2])
 CELLS_SIZE = PFP_SIZE // SQUARE_SIZE
 RULES = [(True, False, False), (False, True, False), (False, False, True), (False, True, True)]
 
@@ -18,7 +20,7 @@ def write_square(picture, m, n):
 
 def on_or_off(above_cells_array, i):
   if i == 0:
-    above = (False, above_cells_array[i], above_cells_array[i + 1])
+    above = (True, above_cells_array[i], above_cells_array[i + 1])
   elif i == CELLS_SIZE - 1:
     above = (above_cells_array[i - 1], above_cells_array[i], False)
   else:
